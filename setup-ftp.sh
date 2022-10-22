@@ -22,8 +22,8 @@ if [ $option = 1 ]
 then
     apt -y update ; apt -y upgrade ; apt -y install proftpd ; apt -y install git
     cp /etc/proftpd/proftpd.conf /etc/proftpd/proftpd.conf.back
-    git clone https://github.com/remi-vidal-michel/referencecfg.git
-    cat referencecfg/cfg.txt > /etc/proftpd/proftpd.conf
+    git clone https://github.com/remi-vidal-michel/ftp.git
+    cat ftp/cfg.txt > /etc/proftpd/proftpd.conf
     mkdir -p /etc/proftpd/ssl
     openssl req -x509 -nodes -days 365 -newkey rsa:4096 -out /etc/proftpd/ssl/proftpd-rsa.pem \
     -keyout /etc/proftpd/ssl/proftpd-key.pem -subj "/C=''/ST=''/L=''/O=''/OU=''/CN=''" 
